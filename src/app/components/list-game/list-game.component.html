@@ -1,0 +1,17 @@
+<div class="col-md-4" *ngFor="let game of listGames | filter:filterGame">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white">
+            {{ game.title }}
+            <button class="btn btn-danger" (click)="deleteGame(game.id)">
+                <i class="fa fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="game.image" class="card-img-top">
+        <div class="card-body">
+            <p>{{ game.description }}</p>
+            <a [routerLink]="['/games/edit', game.id]" class="btn btn-info btn-block">
+                Editar Juego
+            </a>
+        </div>
+    </div>
+</div>
